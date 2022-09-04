@@ -1,16 +1,11 @@
 # hive_crud
+_This project shows a simple application with CRUD functionalities and using Bloc for state management_.
 
-A new Flutter project.
+_Note: HIVE is a NOSQL type of database._
 
-## Getting Started
+Packages Used:
+- BLOC is used for state management.
+- HIVE is used for local  storage.(Local Database).
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Demo
+https://user-images.githubusercontent.com/75658617/187098504-9a4ea938-844d-4c98-8be0-ac7cc86f45a4.mp4
