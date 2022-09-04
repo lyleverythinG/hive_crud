@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_crud/bloc/bloc/crud_bloc.dart';
-
+import 'package:hive_crud/widgets/detail_title.dart';
 import '../constants/constants.dart';
 import '../model/transaction.dart';
+import '../widgets/detail_text.dart';
 
 class DetailsPage extends StatefulWidget {
   final Transaction transaction;
@@ -35,42 +36,26 @@ class _DetailsPageState extends State<DetailsPage> {
         child: Center(
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'name'.toUpperCase(),
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              DetailTitle(text: 'name'.toUpperCase()),
               const SizedBox(height: 10),
               Align(
                 alignment: Alignment.topLeft,
-                child: Text(
-                  widget.transaction.name,
-                  style: const TextStyle(fontSize: 18),
+                child: DetailText(
+                  text: widget.transaction.name,
                 ),
               ),
               const SizedBox(height: 10),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  widget.transaction.isExpense
-                      ? 'expense'.toUpperCase()
-                      : 'income'.toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                ),
+              DetailTitle(
+                text: widget.transaction.isExpense
+                    ? 'expense'.toUpperCase()
+                    : 'income'.toUpperCase(),
               ),
               const SizedBox(height: 10),
               Expanded(
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child: Text(
-                    widget.transaction.amount.toString(),
-                    style: const TextStyle(fontSize: 18),
+                  child: DetailText(
+                    text: widget.transaction.amount.toString(),
                   ),
                 ),
               ),

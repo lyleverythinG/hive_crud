@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_crud/bloc/bloc/crud_bloc.dart';
 import '../constants/constants.dart';
 import '../model/transaction.dart';
+import '../widgets/custom_text.dart';
 import 'detail_page.dart';
 
 class Homepage extends StatefulWidget {
@@ -168,26 +169,19 @@ class _HomepageState extends State<Homepage> {
                                 child: Column(
                                   children: [
                                     ListTile(
-                                      subtitle: Text(
-                                        state.transactions[i].isExpense == true
+                                      subtitle: CustomText(
+                                        text: state.transactions[i].isExpense ==
+                                                true
                                             ? 'expense'.toUpperCase()
                                             : 'income'.toUpperCase(),
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
                                       ),
-                                      leading: Text(
-                                        state.transactions[i].name
+                                      leading: CustomText(
+                                        text: state.transactions[i].name
                                             .toUpperCase(),
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
                                       ),
-                                      title: Text(
-                                        state.transactions[i].amount.toString(),
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                      title: CustomText(
+                                        text: state.transactions[i].amount
+                                            .toString(),
                                       ),
                                       trailing: Row(
                                         mainAxisSize: MainAxisSize.min,
